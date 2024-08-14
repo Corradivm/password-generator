@@ -17,7 +17,7 @@ function genPassword(isUpCase, isLoCase, isNums, isSym, length) {
   const upperCase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
   const lowerCase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
   const numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-  const symbols = ["&", "$", "?", "!", "@", "#", "*"];
+  const symbols = ["&", "$", "?", "!", "@", "#", "*", "%"];
   const characters = [upperCase, upperCase, lowerCase, lowerCase, numbers, symbols];
   let password = "", passLength = length;
   // Defines if the set is desired
@@ -68,9 +68,9 @@ document.getElementById("range").addEventListener("change", () => {
 buttons.forEach(button => {
   button.addEventListener("click", () => {
     const display = document.getElementById("length-display");
-    const rangeControl = document.querySelectorAll(".controls #range");
+    const rangeControl = document.querySelectorAll(".controls #range")[0];
     let innerValue = parseInt(display.innerHTML);
-
+    
     // Changes the inner value according to the value of 'data-action'
     if(button.dataset.action === "increase") {
       if(innerValue === 35) return 
@@ -79,6 +79,7 @@ buttons.forEach(button => {
       if(innerValue === 5) return 
       innerValue--;
     }
+    rangeControl.value = innerValue
     display.innerHTML = innerValue;
   })
 });
