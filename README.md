@@ -2,4 +2,4 @@
 
 
 
-[Password Genetator](https://github.com/Corradivm/password-generator)
+[Password Genetator](https://corradivm.github.io/password-generator/)
