@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/x-icon" href="assets/lock.ico">
+  <title>Password Generator</title>
+  <script src="index.js" defer></script>
+</head>
+<body>
+  <main>
+    <div class="display">Password Generator</div>
+    <div class="main-inner">
+      <div class="controls">
+        <div class="padding-container">
+          <label for="password-length" style="padding-left:0;">Password length:</label>
+          <!-- Try creating a custom range -->
+          <input type="range" name="password-length" value="15" min="5" max="35" id="range">
+          <div id="length-display">15</div>
+          <div class="num-button-container">
+            <button class="arr-btn" data-action="increase"></button>
+            <button class="arr-btn" data-action="decrease"></button>
+          </div>
+        </div>
+        <div class="padding-container">
+          <input type="checkbox" name="uppercase" checked="checked" class="options">
+          <label for="uppercase">ABC</label>
+        </div>
+        <div class="padding-container">
+          <input type="checkbox" name="lowercase" checked="checked" class="options">
+          <label for="lowercase">abc</label>
+        </div>
+        <div class="padding-container">
+          <input type="checkbox" name="numbers" checked="checked" class="options">
+          <label for="numbers">123</label>
+        </div>
+        <div class="padding-container">
+          <input type="checkbox" name="symbols" checked="checked" class="options">
+          <label for="symbols">?#&</label>
+        </div>
+      </div>
+      <div class="button-container">
+        <button id="action-button">Generate Password</button>
+        <button id="copy-button" onclick="copyText()">Copy</button>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
